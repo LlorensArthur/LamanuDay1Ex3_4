@@ -1,12 +1,14 @@
 ﻿Random rand = new Random();
 int randomNumber;
 int numberOfTry;
+int currentTry;
 randomNumber = rand.Next(1, 50);
 numberOfTry = rand.Next(1, 10);
+currentTry = 0;
 Console.WriteLine($"Salut ! J'ai dans ma tête un nombre entre 1 et 50. Devine lequel. Tu as {numberOfTry} essais");
 while(true)
 {
-    if(numberOfTry == 0)
+    if(numberOfTry == currentTry)
     {
         Console.WriteLine("Dommage, tu n'as plus d'essais");
         break;
@@ -23,10 +25,10 @@ while(true)
     }
     else if(answer == randomNumber)
     {
-        Console.WriteLine("Bravo vous avez trouvé !");
+        Console.WriteLine($"Bravo vous avez trouvé en {currentTry} essais.");
         break;
     }
-    numberOfTry--;
+    currentTry++;
 }
 
 
