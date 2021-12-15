@@ -13,8 +13,11 @@ while(true)
         Console.WriteLine("Dommage, tu n'as plus d'essais");
         break;
     }
-
-    int answer = int.Parse(Console.ReadLine());
+    int answer = 0;
+    while (!int.TryParse(Console.ReadLine(), out answer))
+    {
+        Console.WriteLine("Veuillez entrer uniquement un nombre.");
+    }
     if (answer > randomNumber)
     {
         Console.WriteLine("C’est plus petit");
