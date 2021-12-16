@@ -5,7 +5,9 @@ int currentTry;
 randomNumber = rand.Next(1, 50);
 numberOfTry = rand.Next(1, 10);
 currentTry = 0;
+// Annonce des règles du jeu
 Console.WriteLine($"Salut ! J'ai dans ma tête un nombre entre 1 et 50. Devine lequel. Tu as {numberOfTry} essais");
+// Boucle du jeu
 while(true)
 {
     if(numberOfTry == currentTry)
