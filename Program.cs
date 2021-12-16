@@ -10,11 +10,13 @@ Console.WriteLine($"Salut ! J'ai dans ma tête un nombre entre 1 et 50. Devine l
 // Boucle du jeu
 while(true)
 {
-    if(numberOfTry == currentTry)
+    // Game over
+    if (numberOfTry == currentTry)
     {
         Console.WriteLine("Dommage, tu n'as plus d'essais");
         break;
     }
+    // Teste de la saisie utilisateur
     int answer = 0;
     while (!int.TryParse(Console.ReadLine(), out answer))
     {
@@ -28,7 +30,8 @@ while(true)
     {
         Console.WriteLine("C’est plus grand");
     }
-    else if(answer == randomNumber)
+    // Victoire
+    else if (answer == randomNumber)
     {
         Console.WriteLine($"Bravo vous avez trouvé en {currentTry} essais.");
         break;
